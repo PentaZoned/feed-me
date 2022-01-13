@@ -8,5 +8,10 @@ function randomizer() {
     fetch(queryURL)
         .then(function(response) {
             return response.json();
-    })
+        })
+        .then(function(data) {
+            $("#restaurantName").text(data.businesses[0].name);
+            $("#restaurantRating").text(data.businesses[0].rating);
+            $("#restaurantAddress").text(data.businesses[0].name);
+        })
 }
