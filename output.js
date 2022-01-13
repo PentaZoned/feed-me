@@ -26,9 +26,11 @@ function randomizer() {
             
             // dynamically changes the set of restaurant data to the next random set
             // Yelp API documentation examples were used as references for creating the arguments instead of console logging the entire data
-            $("#restaurantName").text(data.businesses[restaurantIndex].name);
-            $("#restaurantRating").text(data.businesses[restaurantIndex].rating);
-            $("#restaurantAddress").text(data.businesses[restaurantIndex].location);
+            var refRestaurant = data.businesses[restaurantIndex]; // This variable represents the random restaurant
+            $("#restaurantName").text(refRestaurant.name);
+            $("#restaurantRating").text(refRestaurant.rating);
+            $("#restaurantAddress").text(refRestaurant.location.address1 + ", " + refRestaurant.location.city + ", " + refRestaurant.location.state
+                                        + refRestaurant.zip_code);
         })
 }
 
