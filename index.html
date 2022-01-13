@@ -30,50 +30,66 @@
         <form id="search-form">
             <div class="container">
                 <div class="columns">
-                    <div class="column first-column is-one-quarter is-offset-one-quarter">
+                    <div class="column first-column">
                         <!--Enter City button-->
                         <input id="autocomplete" class="input  is-small" type="text" placeholder="Enter City" maxlength="20">
-                    
-                            <!--Enter type of food modal-->
-                            <div class="is-one-quarter is-offset-one-quarter">
-                                <button class="js-modal-trigger button column first-column" data-target="modal-js-example">Enter Type of Food</button>
-                            </div>
-                    </div>
-                    <div class="column second-column">
-                        <!--Choose a budget Modal-->
+                     <!--Choose a budget -->
                         <div class="input" type="checkbox">Choose a Budget</div>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="$" value="$">
+                                <label for="$">$</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="$$" value="$$">
+                                <label for="$$">$$</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="$$$" value="$$$">
+                                <label for="$$$">$$$</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="$$$$" value="$$$$">
+                                <label for="$$$$">$$$$</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Enter type of Restaurant Type-->
+                    <div class="column second-column">
+                        <div class="input" type="checkbox">Choose a type of Restaurant</div>
                             <ul>
                                 <li>
-                                    <input type="checkbox" id="$" value="$">
-                                    <label for="$">$</label>
+                                    <input type="checkbox" id="pizza" value="Pizza Place">
+                                    <label for="pizza">Pizza Place</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="$$" value="$$">
-                                    <label for="$$">$$</label>
+                                    <input type="checkbox" id="american" value="american">
+                                    <label for="american">American</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="$$$" value="$$$">
-                                    <label for="$$$">$$$</label>
+                                    <input type="checkbox" id="italian" value="italian">
+                                    <label for="italian">Italian</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="$$$$" value="$$$$">
-                                    <label for="$$$$">$$$$</label>
+                                    <input type="checkbox" id="chineese" value="chineese">
+                                    <label for="chineese">Chineese</label>
                                 </li>
                             </ul>
-
+                        </div>
+                    </div>
                         <!--Choose Diet Restriction Modal--> 
-                        <div class=" column second-column">
+                        <!-- <div class=" column second-column">
                             <div class="input" type="checkbox">Enter Diet Restrictions</div>
                         </div>
                     </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-one-fifth is-offset-two-fifths">
-                        <button class="button " type="submit">Submit</button>
+                </div> -->
+                    <div class="columns">
+                        <div class="column is-one-fifth is-offset-two-fifths">
+                            <button class="button " type="submit">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </form>
     </section>
     <script 
