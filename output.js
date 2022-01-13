@@ -9,4 +9,11 @@ function randomizer() {
         .then(function(response) {
             return response.json();
         })
+        .then(function(data) {
+ 
+            var refRestaurant = data.businesses[restaurantIndex];
+            $("#restaurantName").text(data.businesses[0].name);
+            $("#restaurantRating").text(data.businesses[0].rating);
+            $("#restaurantAddress").text(data.businesses[0].location);
+        })
 }
