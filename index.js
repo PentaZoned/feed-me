@@ -14,7 +14,9 @@ function initAutocomplete(){
 
 var formSubmitHandler = function(event){
   event.preventDefault();
-  var city = searchInput.value.trim();
+  var city = searchInput.value;
   console.log(city);
+  cityName = city.split(',');
+  console.log(cityName[0]);
 }
 searchForm.addEventListener('submit', formSubmitHandler);
