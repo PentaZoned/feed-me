@@ -7,26 +7,52 @@
     <title>Feed Me</title>
 </head>
 <body>
-    <heading>Feed Me</heading>
-    <form>
-        <!--Enter City button-->
-        <input class="input is-info" type="text" placeholder="Enter City">
-    
-        <!--Enter type of food modal-->
-        <button class="js-modal-trigger" data-target="modal-js-example">
-            Enter Type of Food
-          </button>
-          <!--Choose a budget Modal-->
-          <button class="js-modal-trigger" data-target="modal-js-example">
-            Choose Your Budget
-          </button>
-        
-          <!--Choose Diet Restriction Modal-->
-          <button class="js-modal-trigger" data-target="modal-js-example">
-            Enter Diet Restrictions
-          </button>
-          <button type="submit">Submit</button>
-    </form>
+    <section class="hero has-background-gray">
+        <div class="container">
+            <div class="hero body">
+                <heading class="title is-1">Feed Me</heading>
+                <figure class="image">
+                    <img src="#" alt="picture of plate">
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <form>
+            <div class="container">
+                <div class="columns">
+                    <div class="column first-column is-one-quarter is-offset-one-quarter">
+                        <!--Enter City button-->
+                        <input class="input  is-small" type="text" placeholder="Enter City" maxlength="20">
+                    
+                            <!--Enter type of food modal-->
+                        <button class="is-one-quarter is is-offset-one-quarter is-outlined js-modal-trigger" data-target="modal-js-example">
+                                Enter Type of Food
+                        </button>
+                    </div>
+                    <div class="column second-column">
+                        <!--Choose a budget Modal-->
+                        <div class="dropdown is-active">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                <span>Choose a Budget</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                        </div>
+                        <!--Choose Diet Restriction Modal--> 
+                        <button class="js-modal-trigger button" data-target="modal-js-example">Enter Diet Restrictions</button>
+                    </div>
+                </div>
+            </div>
+                    <button class="column center" type="submit">Submit</button>
+        </form>
+    </section>
+    <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_MRjVNaC1LP659PeDLQW5KgHHnw4hVQM&libraries=places&callback=initAutocomplete" async defer>
+    </script>
     <script src="index.js"></script>
     <script src="output.js"></script>
 </body>
