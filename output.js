@@ -4,4 +4,9 @@ var APIKey = "j4Wm80vbFD98XzxTP7oR4gYbX-P9w-hGhH_oQQf90hgdZ2eZB_ZTjjvbIJH_Vq2tY6
 function randomizer() {
 
     var queryURL = "https://api.yelp.com/v3/businesses/search?location=" + city + "&appid=" + APIKey;
+
+    fetch(queryURL)
+    .then(function(response) {
+        return response.json();
+    })
 }
