@@ -10,8 +10,12 @@ function randomizer() {
         return response.json();
     })
     .then(function(data) {
-        $("#restaurantName").text(data.businesses[0].name);
-        $("#restaurantRating").text(data.businesses[0].rating);
-        $("#restaurantAddress").text(data.businesses[0].location);
+
+        var totalResults = data.total;
+        var restaurantIndex = Math.floor(Math.random() * totalResults);
+
+        $("#restaurantName").text(data.businesses[restaurantIndex].name);
+        $("#restaurantRating").text(data.businesses[restaurantIndex].rating);
+        $("#restaurantAddress").text(data.businesses[restaurantIndex].location);
 })
 }
