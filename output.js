@@ -5,4 +5,8 @@ function randomizer() {
 
     var queryURL = "https://api.yelp.com/v3/businesses/search?location=" + city + "&appid=" + APIKey;
 
+    fetch(queryURL)
+        .then(function(response) {
+            return response.json();
+    })
 }
