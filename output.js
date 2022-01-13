@@ -3,7 +3,6 @@ var APIKey = "j4Wm80vbFD98XzxTP7oR4gYbX-P9w-hGhH_oQQf90hgdZ2eZB_ZTjjvbIJH_Vq2tY6
 
 var city = $("#cityName");
 
-
 // function will use a fetch request to Yelp API to retrieve a promise and manipulate the data received
 // and update the page with new restaurant details
 // API used: https://www.yelp.com/developers/documentation/v3/business_search
