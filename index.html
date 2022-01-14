@@ -9,50 +9,87 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Feed Me</title>
 </head>
 <body>
-    <section class="hero has-background-gray">
+    <section class="hero has-background-dark">
         <div class="container">
             <div class="hero body">
-                <heading class="title is-1">Feed Me</heading>
+                <!-- <heading class="title is-1">Feed Me</heading> -->
                 <figure class="image">
-                    <img src="#" alt="picture of plate">
+                    <img src="feedMePlate.jpg" alt="picture of plate" style="max-height: 500px;">
                 </figure>
             </div>
         </div>
     </section>
-    <section class="section">
+    <section class="section has-background-dark has-text-light">
         <form id="search-form">
             <div class="container">
                 <div class="columns">
-                    <div class="column first-column is-one-quarter is-offset-one-quarter">
+                    <div class="column first-column">
                         <!--Enter City button-->
                         <input id="autocomplete" class="input  is-small" type="text" placeholder="Enter City" maxlength="20">
-                    
-                            <!--Enter type of food modal-->
-                        <button class="is-one-quarter is is-offset-one-quarter is-outlined js-modal-trigger" data-target="modal-js-example">
-                                Enter Type of Food
-                        </button>
+                     <!--Choose a budget -->
+                        <div class="input" type="checkbox">Choose a Budget</div>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="$" value="$">
+                                <label for="$">$</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="$$" value="$$">
+                                <label for="$$">$$</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="$$$" value="$$$">
+                                <label for="$$$">$$$</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="$$$$" value="$$$$">
+                                <label for="$$$$">$$$$</label>
+                            </li>
+                        </ul>
                     </div>
+                    <!--Enter type of Restaurant Type-->
                     <div class="column second-column">
-                        <!--Choose a budget Modal-->
-                        <div class="dropdown is-active">
-                            <div class="dropdown-trigger">
-                              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span>Choose a Budget</span>
-                                <span class="icon is-small">
-                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                              </button>
-                            </div>
+                        <div class="input" type="checkbox">Choose a type of Restaurant</div>
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="pizza" value="Pizza Place">
+                                    <label for="pizza">Pizza Place</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="american" value="american">
+                                    <label for="american">American</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="italian" value="italian">
+                                    <label for="italian">Italian</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="chineese" value="chineese">
+                                    <label for="chineese">Chineese</label>
+                                </li>
+                            </ul>
                         </div>
+                    </div>
                         <!--Choose Diet Restriction Modal--> 
-                        <button class="js-modal-trigger button" data-target="modal-js-example">Enter Diet Restrictions</button>
+                        <!-- <div class=" column second-column">
+                            <div class="input" type="checkbox">Enter Diet Restrictions</div>
+                        </div>
+                    </div>
+                </div> -->
+                    <div class="columns">
+                        <div class="column is-one-fifth is-offset-two-fifths">
+                            <button class="button " type="submit">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
-                    <button class="column center" type="submit">Submit</button>
         </form>
     </section>
     <script 
