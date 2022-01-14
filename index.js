@@ -60,5 +60,7 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
                                       + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code);
           $("#restaurantNumber").text("Phone Number: " + restaurantIndex.display_phone);
 
+          $("#restaurantPhoto").attr("src", restaurantIndex.image_url);
+
         })
 }
