@@ -55,17 +55,16 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
       var requestObj = {
         'url': cors_anywhere_url + '/' + yelp_search_url,
         'data': {
-                term: 'restaurants',
+                term: foodType,
                 location: cityName,
                 price: budget,
-                alias: foodType
               },
         headers: {'Authorization': token},
         error: function(jqXHR, textStatus, errorThrown){
           console.log('AJAX error, jqXRH = ', jqXHR, ', textStatus =',
           textStatus, ', errorThrown = ', errorThrown)
-        }
-      }
+        } 
+      } 
       $.ajax(requestObj)
         .done(function(response){
           var array = response.businesses;
