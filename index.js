@@ -47,7 +47,15 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
           console.log(restaurantIndex);
           $("#restaurantName").text("Restaurant Name: " + restaurantIndex.name);
           $("#restaurantRating").text("Rating: " + restaurantIndex.rating);
-          $("#restaurantStatus").text("Status: " + restaurantIndex.is_closed);
+
+          var open;
+          if(restaurantIndex.is_closed === false) {
+            open = "Currently Open";
+          } else {
+            open = "Currently Closed";
+          }
+
+          $("#restaurantStatus").text("Status: " + open);
           $("#restaurantAddress").text("Address: " + restaurantIndex.location);
           $("#restaurantNumber").text("Phone Number: " + restaurantIndex.display_phone);
 
