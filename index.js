@@ -26,7 +26,7 @@ searchForm.addEventListener('submit', formSubmitHandler);
 
 let queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
 
-function getYelpApi(test){
+function getYelpApi(cityName){
 var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1DxsjrO-XhEj2sNaG7HMrxnhGvRihWa5iQI7mXvRlOM-w_XRXd3UxOMswA9Bxp_jIFBB-YHYx'
     var yelp_search_url = 'https://api.yelp.com/v3/businesses/search'
     var cors_anywhere_url = 'https://cors-anywhere.herokuapp.com'
