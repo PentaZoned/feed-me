@@ -28,16 +28,27 @@ var formSubmitHandler = function(event){
   $.each(checkedE1, function(){
     selected.push($(this).val());
   });
-  console.log('Budget is :', selected.join(','));
-  var budget = selected.join(',');
-  getYelpApi(cityName, budget);
+  console.log('Filter is :', selected.join(','));
+  var filter = selected.join(',');
+  console.log(filter.split(','));
+  
+  var filterSplit = filter.split(',');
+  console.log(filterSplit = filter.split(','));
+  
+  var budget = filterSplit[0];
+  console.log(budget);
+  var foodType = filterSplit[1];
+  console.log(foodType);
+  // var splitBudget = budget.split(',');
+  // console.log(splitBudget[0]);
+  getYelpApi(cityName, budget, foodType);
 }
 searchForm.addEventListener('submit', formSubmitHandler);
 
 
 //let queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
 
-function getYelpApi(cityName, budget){
+function getYelpApi(cityName, budget, foodType){
 var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1DxsjrO-XhEj2sNaG7HMrxnhGvRihWa5iQI7mXvRlOM-w_XRXd3UxOMswA9Bxp_jIFBB-YHYx'
     var yelp_search_url = 'https://api.yelp.com/v3/businesses/search'
     var cors_anywhere_url = 'https://cors-anywhere.herokuapp.com'
@@ -46,7 +57,8 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
         'data': {
                 term: 'restaurants',
                 location: cityName,
-                price: budget
+                price: budget,
+                alias: foodType
               },
         headers: {'Authorization': token},
         error: function(jqXHR, textStatus, errorThrown){
