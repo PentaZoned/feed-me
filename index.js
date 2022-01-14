@@ -20,11 +20,18 @@ var formSubmitHandler = function(event){
   console.log(citySplit[0]);
   cityName = citySplit[0];
   getYelpApi(cityName);
+
+  var checkedE1 = $('input:checked');
+  var selected = [];
+  $.each(checkedE1, function(){
+    selected.push($(this).val());
+  });
+  console.log('Budget is :', selected.join(','));
 }
 searchForm.addEventListener('submit', formSubmitHandler);
 
 
-let queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
+//let queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
 
 function getYelpApi(cityName){
 var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1DxsjrO-XhEj2sNaG7HMrxnhGvRihWa5iQI7mXvRlOM-w_XRXd3UxOMswA9Bxp_jIFBB-YHYx'
