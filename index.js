@@ -2,6 +2,8 @@ var searchForm = document.querySelector('#search-form');
 var searchInput = document.querySelector('#autocomplete');
 let autocomplete;
 
+$("#restaurantSection").attr("style", "display:none");
+
 function initAutocomplete(){
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('autocomplete'),
@@ -58,6 +60,9 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
           var restaurantIndex = array[Math.floor(Math.random() * array.length)];
           console.log('response = ', array)
           console.log(restaurantIndex);
+
+          $("#restaurantSection").attr("style", "display:visible");
+
           $("#restaurantName").text("Restaurant Name: " + restaurantIndex.name);
           $("#restaurantRating").text("Rating: " + restaurantIndex.rating);
 
