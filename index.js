@@ -57,12 +57,23 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
           var array = response.businesses;
           var restaurantIndex = array[Math.floor(Math.random() * array.length)];
           console.log('response = ', array)
-            console.log(restaurantIndex);
+          console.log(restaurantIndex);
+          $("#restaurantName").text("Restaurant Name: " + restaurantIndex.name);
+          $("#restaurantRating").text("Rating: " + restaurantIndex.rating);
+
+          var open;
+          if(restaurantIndex.is_closed === false) {
+            open = "Currently Open";
+          } else {
+            open = "Currently Closed";
+          }
+
+          $("#restaurantStatus").text("Status: " + open);
+          $("#restaurantAddress").text("Address: " + restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
+                                      + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code);
+          $("#restaurantNumber").text("Phone Number: " + restaurantIndex.display_phone);
+
+          $("#restaurantPhoto").attr("src", restaurantIndex.image_url);
+
         })
 }
-
-function randomizer() {
-
-}
-
-// Adds an event listener to the randomizer button, function will run when the button is clicked
