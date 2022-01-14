@@ -16,10 +16,10 @@ var formSubmitHandler = function(event){
   event.preventDefault();
   var city = searchInput.value;
   console.log(city);
-  cityName = city.split(',');
-  console.log(cityName[0]);
-  test = cityName[0];
-  getYelpApi(test);
+  citySplit = city.split(',');
+  console.log(citySplit[0]);
+  cityName = citySplit[0];
+  getYelpApi(cityName);
 }
 searchForm.addEventListener('submit', formSubmitHandler);
 
@@ -32,7 +32,7 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
     var cors_anywhere_url = 'https://cors-anywhere.herokuapp.com'
       var requestObj = {
         'url': cors_anywhere_url + '/' + yelp_search_url,
-        'data': {term: 'restaurants', location: test},
+        'data': {term: 'restaurants', location: cityName},
         headers: {'Authorization': token},
         error: function(jqXHR, textStatus, errorThrown){
           console.log('AJAX error, jqXRH = ', jqXHR, ', textStatus =',
