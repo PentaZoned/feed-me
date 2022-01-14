@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"/>
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Feed Me Search Results</title>
 </head>
+
 <body>
     <section class="hero has-background-dark has-text-light">
         <div class="container">
@@ -23,6 +24,10 @@
         <div class="container">
             <div class="Columns">
                 <div class="column">
+                <!--Restaurant Photo-->
+                <div>
+                    <img src="#" alt="photo of the restaurtant">
+                </div>
                 <!-- Restaurant Name-->
                 <h1 class="is-1">Restaurnt Name:</h1>
                 </div>
@@ -30,19 +35,28 @@
                 <div>
                     <h2 class="is-2">Rating:</h2>
                 </div>
+                <!-- Restaurnt is open-->
+                <div>
+                    <h2 class="is-2">Restaurant Open:</h2>
+                </div>
                 <!-- Restaurant Address-->
                 <div>
                     <p>Address:</p>
                 </div>
+                <!--Restaurant Phone Number-->
+                <div>
+                    <p>Restaurant Phone Number:</p>
+                </div>
                 <!--Randomizer Search again button-->
                 <h3 class="is-3"></h3>
-                <button class="button" id="search-form">Search Again</button>
+                <button class="button has-background-grey-lighter">Search Again</button><br>
                 <!-- Home button -->
-                <button class="button">Home</button>
                 <p>Go back and choose different preferences</p>
+                <button class="button has-background-grey-lighter">Home</button>
             </div>
         </div>
     </section>
     <script src="index.js"></script>
 </body>
+
 </html>
