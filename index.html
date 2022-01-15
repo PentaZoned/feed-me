@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-background-dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +16,7 @@
     <title>Feed Me</title>
 </head>
 <body>
+    <!-- Modal to getset up CORS to make search work-->
     <div id ="modal" class="modal is-active">
         <div class="modal-background">
             <div class="modal-content has-text-white">
@@ -25,7 +26,7 @@
             <button id="modalButton" class="modal-close is-large" aria-label="close"></button>
         </div>
     </div>
-    <section class="hero has-background-dark">
+    <section class="hero">
         <div class="container">
             <div class="hero body">
                 <!-- <heading class="title is-1">Feed Me</heading> -->
@@ -35,7 +36,7 @@
             </div>
         </div>
     </section>
-    <section class="section has-background-dark has-text-light">
+    <section class="section has-text-light">
         <form id="search-form">
             <div class="container">
                 <div class="columns">
@@ -101,7 +102,7 @@
             </div>
         </form>
     </section>
-    <section class="section background-size-cover has-background-dark has-text-light" id="restaurantSection">
+    <section class="section background-size-cover has-text-light" id="restaurantSection">
         <div class="container">
             <div class="Columns">
                 <div class="column">
