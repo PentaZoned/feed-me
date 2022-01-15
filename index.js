@@ -1,6 +1,8 @@
 var searchForm = document.querySelector('#search-form');
 var searchInput = document.querySelector('#autocomplete');
 let autocomplete;
+var modalButton = document.querySelector('#modalButton');
+var modal = document.querySelector('#modal');
 
 $("#restaurantSection").attr("style", "display:none");
 
@@ -12,7 +14,13 @@ function initAutocomplete(){
       componentRestrictions: {'country': ['us']}
     });
 }
+//event listener for modal button
+$("#modalButton").on("click", closeModal);
 
+function closeModal(event) {
+console.log("it works");
+modal.remove("is-active");
+}
 
 var formSubmitHandler = function(event){
   event.preventDefault();
