@@ -16,6 +16,15 @@
     <title>Feed Me</title>
 </head>
 <body>
+    <div id ="modal" class="modal is-active">
+        <div class="modal-background-is-dark">
+            <div class="modal-content has-background-danger-dark has-text-white">
+                <p>Please folow this link and click on the "Request temporty access to the demo server"</p> 
+                <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="blank"><p class="has-text-link">https://cors-anywhere.herokuapp.com/corsdemo</p></a>
+            </div>
+            <button id="modalButton" class="modal-close is-large" aria-label="close"></button>
+        </div>
+    </div>
     <section class="hero has-background-dark">
         <div class="container">
             <div class="hero body">
@@ -23,16 +32,6 @@
                 <figure class="image">
                     <img src="feedMePlate.jpg" alt="picture of plate" style="max-height: 500px;">
                 </figure>
-                <div class="modal is-active">
-                    <div class="modal-background-is-dark"></div>
-                    <div class="modal-content has-text-white">
-                      <p>Please folow this link and click on the "Request temporty access to the demo server"</p> 
-                      <p class="has-text-link" herf="https://cors-anywhere.herokuapp.com/corsdemo">https://cors-anywhere.herokuapp.com/corsdemo</p>
-                        <p>The message should then read: You currently have temporary access to the demo server. </p>
-                    </div>
-                    <button class="modal-close is-large" aria-label="close"></button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -102,7 +101,7 @@
             </div>
         </form>
     </section>
-    <section class="section has-background-dark has-text-light" id="restaurantSection">
+    <section class="section background-size-cover has-background-dark has-text-light" id="restaurantSection">
         <div class="container">
             <div class="Columns">
                 <div class="column">
