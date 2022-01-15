@@ -41,18 +41,29 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Deployed Link
 
-* [See Live Site](#)
+* [See Live Site](https://pentazoned.github.io/feed-me/)
 
 
 ## Authors
 
-* **YOUR NAME** 
+* **Bradley Le** 
+
+- [Link to Portfolio Site](https://pentazoned.github.io/portfolio-1/)
+- [Link to Github](https://github.com/PentaZoned)
+- [Link to LinkedIn](https://www.linkedin.com/in/bradley-le-/)
+
+* **Laura Gupta** 
 
 - [Link to Portfolio Site](#)
 - [Link to Github](https://github.com/)
 - [Link to LinkedIn](https://www.linkedin.com/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Jose Pascual** 
+
+- [Link to Portfolio Site](#)
+- [Link to Github](https://github.com/)
+- [Link to LinkedIn](https://www.linkedin.com/)
+
 
 ## License
 
