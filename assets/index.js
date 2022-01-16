@@ -74,7 +74,7 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
 
           $("#restaurantSection").attr("style", "display:visible");
 
-          $("#restaurantName").text("Restaurant Name: " + restaurantIndex.name);
+          $("#restaurantName").text(restaurantIndex.name);
           $("#restaurantRating").text("Rating: " + restaurantIndex.rating);
 
           var open;
@@ -85,7 +85,7 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
           }
 
           $("#restaurantStatus").text("Status: " + open);
-          $("#restaurantAddress").text("Address: " + restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
+          $("#restaurantAddress").text(restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
                                       + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code);
           $("#restaurantNumber").text("Phone Number: " + restaurantIndex.display_phone);
 
