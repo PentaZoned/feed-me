@@ -32,25 +32,15 @@ var formSubmitHandler = function(event){
   console.log(citySplit[0]);
   cityName = citySplit[0];
   
+  var budgetSelect = document.getElementById('budget-list');
+  var budget = budgetSelect.options[budgetSelect.selectedIndex].value;
 
-  var checkedE1 = $('input:checked');
-  var selected = [];
-  $.each(checkedE1, function(){
-    selected.push($(this).val());
-  });
-  console.log('Filter is :', selected.join(','));
-  var filter = selected.join(',');
-  console.log(filter.split(','));
-  
-  var filterSplit = filter.split(',');
-  console.log(filterSplit = filter.split(','));
-  
-  var budget = filterSplit[0];
+  var foodTypeSelect = document.getElementById('food-type-list');
+  var foodType = foodTypeSelect.options[foodTypeSelect.selectedIndex].value;
+
   console.log(budget);
-  var foodType = filterSplit[1];
   console.log(foodType);
-  // var splitBudget = budget.split(',');
-  // console.log(splitBudget[0]);
+
   getYelpApi(cityName, budget, foodType);
 }
 searchForm.addEventListener('submit', formSubmitHandler);
