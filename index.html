@@ -33,7 +33,28 @@
     <section class="hero">
         <div class="container">
           <div class="hero body">
-              <canvas width="500" height="500"></canvas>
+              <canvas id="logo" width="500" height="500"></canvas>
+              
+              <section class="section has-text-light has-background-orange-lighter" id="restaurantSection">
+                <div class="container">
+                  <div class="columns">
+                    <!--Restaurant Name-->
+                    <div class="column has-text-centered is-offset-2">
+                      <h2 id="restaurantName">Restaurant Name:</h2>
+                      <h3 id="restaurantRating">Rating:</h2>
+                      <h4 id="restaurantStatus">Status:</h2>
+                      <p id="restaurantAddress">Address:</p>
+                      <p id="restaurantNumber">Phone Number:</p>
+                    </div>
+                    <div class="column">
+                      <!--Restaurant Photo-->
+                      <div class="image is-224x224">
+                        <img id="restaurantPhoto" class="is-rounded" alt="photo of the restaurtant food">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
           </div>
         </div>
     </section>
@@ -104,45 +125,7 @@
             </div>
         </form>
     </section>
-    <section class="section has-text-light" id="restaurantSection">
-        <div class="container">
-          <div class="columns">
-            <!--Restaurant Name-->
-            <div class="column has-text-centered is-offset-2">
-              <h2 id="restaurantName">Restaurant Name:</h2>
-              <h3 id="restaurantRating">Rating:</h2>
-              <h4 id="restaurantStatus">Status:</h2>
-              <p id="restaurantAddress">Address:</p>
-              <p id="restaurantNumber">Phone Number:</p>
-            </div>
-            <div class="column">
-              <!--Restaurant Photo-->
-              <div class="image is-224x224">
-                <img id="restaurantPhoto" class="is-rounded" alt="photo of the restaurtant food">
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-                <!-- Restaurnt Rating-->
-                <!-- <div>
-                    <h2 class="is-2" id="restaurantRating">Rating:</h2>
-                </div> -->
-                <!-- Restaurnt is open-->
-                <!-- <div>
-                    <h2 class="is-2" id="restaurantStatus">Status:</h2>
-                </div> -->
-                <!-- Restaurant Address-->
-                <!-- <div>
-                    <p id="restaurantAddress">Address:</p>
-                </div> -->
-                <!--Restaurant Phone Number-->
-                <!-- <div>
-                    <p id="restaurantNumber">Phone Number:</p>
-                </div> -->
-          <!-- </div>
-        </div>
-    </section> -->
+    
     <script 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_MRjVNaC1LP659PeDLQW5KgHHnw4hVQM&libraries=places" async defer>
     </script>
