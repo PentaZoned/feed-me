@@ -1,9 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Rubik:wght@300&display=swap');
 
 h1{
   font-family: 'Josefin Sans', sans-serif;
   font-size: 80px;
 }  
+
+h2{
+  font-family: 'Rubik', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h3{
+  font-family: 'Rubik', sans-serif;
+  font-size: 30px;
+}
+
+h4{
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+}
+
+p{
+  font-family: 'Rubik', sans-serif;
+  font-size: 15px;
+}
 
 .hero{
   background-image: url('https://i.imgur.com/QkRzPgt.jpg');
@@ -17,9 +38,9 @@ h1{
   height: 'auto';
 }
 
-.image.is-150x150{
-  height: 150px;
-  width: 150px;
+.image.is-224x224{
+  height: 224px;
+  width: 224px;
 }
 .has-image-centered {
   margin-left: auto;
