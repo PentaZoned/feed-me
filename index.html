@@ -28,12 +28,9 @@
     </div>
     <section class="hero">
         <div class="container">
-            <div class="hero body">
-                <!-- <heading class="title is-1">Feed Me</heading> -->
-                <figure class="image">
-                    <img src="feedMePlate.jpg" alt="picture of plate" style="max-height: 500px;">
-                </figure>
-            </div>
+          <div class="hero body">
+            <canvas width="500" height="500"></canvas>
+          </div>
         </div>
     </section>
     <section class="section has-text-light">
@@ -124,8 +121,10 @@
         </div>
     </section>
     <script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_MRjVNaC1LP659PeDLQW5KgHHnw4hVQM&libraries=places&callback=initAutocomplete" async defer>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_MRjVNaC1LP659PeDLQW5KgHHnw4hVQM&libraries=places" async defer>
     </script>
-    <script src="index.js"></script>
+        <script src="assets/node_modules/animejs/lib/anime.min.js"></script>
+        <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+    <script src="assets/index.js"></script>
 </body>
 </html>
