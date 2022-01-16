@@ -91,7 +91,37 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
 
           $("#restaurantPhoto").attr("src", restaurantIndex.image_url);
 
+          saveRestaurant();
         })
+}
+
+function saveRestaurant() {
+  var previousRestaurant = {
+    name: $("#restaurantName").text(),
+    rating: $("#restaurantRating").text(),
+    status: $("#restaurantStatus").text(),
+    address: $("#restaurantAddress").text(),
+    phoneNumber: $("#restaurantNumber").text(),
+    photo: $("#restaurantPhoto").text()
+  };
+
+  localStorage.setItem("previousRestaurant", JSON.stringify(previousRestaurant));
+}
+
+function renderLastRest() {
+  $("#restaurantSection").attr("style", "display:visible");
+  var lastInfo = JSON.parse(localStorage.getItem("previousRestaurant"));
+
+  if(lastInfo !== null) {
+    $("#restaurantName").text(lastInfo.name);
+    $("#restaurantRating").text(lastInfo.rating);
+    $("#restaurantStatus").text(lastinfo.status);
+    $("#restaurantAddress").text(lastInfo.address);
+    $("#restaurantNumber").text(lastinfo.phoneNumber);
+    $("#restaurantPhoto").text(lastinfo.photo);
+  } else {
+    return;
+  }
 }
 
 //Logo using Zdog api and Anime api
