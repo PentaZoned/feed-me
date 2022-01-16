@@ -45,10 +45,11 @@
                         <div class="control is-expanded">
                           <div class="select is-fullwidth">
                             <select id="budget-list">
-                              <option id="budget" value="1" selected>$</option>
-                              <option id="budget" value="2" selected>$$</option>
-                              <option id="budget" value="3" selected>$$$</option>
-                              <option id="budget" value="4" selected>$$$$</option>
+                              <option value="" disabled selected hidden>Choose a Budget</option>
+                              <option id="budget" value="1">$</option>
+                              <option id="budget" value="2">$$</option>
+                              <option id="budget" value="3">$$$</option>
+                              <option id="budget" value="4">$$$$</option>
                             </select>
                           </div>
                         </div>
@@ -63,6 +64,7 @@
                             <div class="control is-expanded">
                               <div class="select is-fullwidth">
                                 <select id="food-type-list">
+                                  <option value="" disabled selected hidden>Choose a Type of Food </option>
                                   <option id="food-type" value="American">American</option>
                                   <option id="food-type" value="Delis">Delis</option>
                                   <option id="food-type" value="Burgers">Burgers</option>
