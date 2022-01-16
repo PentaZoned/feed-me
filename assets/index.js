@@ -77,7 +77,7 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
           $("#restaurantSection").attr("style", "display:visible");
 
           $("#restaurantName").text(restaurantIndex.name);
-          $("#restaurantRating").text("Rating: " + restaurantIndex.rating);
+          $("#restaurantRating").text(restaurantIndex.rating);
 
           var open;
           if(restaurantIndex.is_closed === false) {
@@ -86,14 +86,48 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
             open = "Currently Closed";
           }
 
-          $("#restaurantStatus").text("Status: " + open);
+          $("#restaurantStatus").text(open);
           $("#restaurantAddress").text(restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
                                       + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code);
-          $("#restaurantNumber").text("Phone Number: " + restaurantIndex.display_phone);
+          $("#restaurantNumber").text(restaurantIndex.display_phone);
 
           $("#restaurantPhoto").attr("src", restaurantIndex.image_url);
 
+          saveRestaurant();
+
         })
+}
+
+// Function is used to save the restaurant information
+function saveRestaurant() {
+  // Creates a jQuery object prototype to store a single restaurant's information
+  var previousRestaurant = {
+    name: $("#restaurantName").text(),
+    rating: $("#restaurantRating").text(),
+    status: $("#restaurantStatus").text(),
+    address: $("#restaurantAddress").text(),
+    phoneNumber: $("#restaurantNumber").text(),
+    photo: $("#restaurantPhoto").text()
+  };
+  // Creates a key for the values and converts the object into a string
+  localStorage.setItem("previousRestaurant", JSON.stringify(previousRestaurant));
+}
+
+
+function renderLastRest() {
+  $("#restaurantSection").attr("style", "display:visible");
+  var lastInfo = JSON.parse(localStorage.getItem("previousRestaurant"));
+
+  if(lastInfo !== null) {
+    $("#restaurantName").text(lastInfo.name);
+    $("#restaurantRating").text(lastInfo.rating);
+    $("#restaurantStatus").text(lastinfo.status);
+    $("#restaurantAddress").text(lastInfo.address);
+    $("#restaurantNumber").text(lastinfo.phoneNumber);
+    $("#restaurantPhoto").text(lastinfo.photo);
+  } else {
+    return;
+  }
 }
 
 //Logo using Zdog api and Anime api
