@@ -39,61 +39,69 @@
     <section class="section has-text-light">
         <form id="search-form">
             <div class="container">
-                <div class="columns">
-                    <div class="column first-column">
+                <div class="columns is-centered">
+                    <div class="column first-column is-one-quarter">
                         <!--Enter City button-->
                         <input id="autocomplete" class="input has-background-grey-lighter has-text-grey-dark is-small" type="text" placeholder="Enter City" maxlength="20">
                      <!--Choose a budget -->
-                     <div class="control">
-                        <div class="select">
-                          <select>
-                            <option>$</option>
-                            <option>$$</option>
-                            <option>$$$</option>
-                            <option>$$$$</option>
-                          </select>
+                     <div class="field has-addons">
+                        <div class="control is-expanded">
+                          <div class="select is-fullwidth">
+                            <select name="Budget">
+                              <option value="1">$</option>
+                              <option value="2">$$</option>
+                              <option value="3">$$$</option>
+                              <option value="4">$$$$</option>
+                            </select>
+                          </div>
                         </div>
+                        <!-- <div class="control">
+                          <button type="submit" class="button is-primary">Choose</button>
+                        </div> -->
                       </div>
                     </div>
                     <!--Enter type of Restaurant Type-->
-                    <div class="column second-column">
-                        <div class="input has-background-grey-lighter" type="checkbox">Choose a type of Restaurant</div>
-                            <ul>
-                                <li>
-                                    <input type="checkbox" id="pizza" value="Pizza Place">
-                                    <label for="pizza">Pizza Place</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="american" value="american">
-                                    <label for="american">American</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="italian" value="italian">
-                                    <label for="italian">Italian</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="chinese" value="chinese">
-                                    <label for="chinese">Chinese</label>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="column second-column is-one-quarter">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                              <div class="select is-fullwidth">
+                                <select name="Type of Restaurant">
+                                  <option value="American">American</option>
+                                  <option value="Delis">Delis</option>
+                                  <option value="Burgers">Burgers</option>
+                                  <option value="Bar">Bar</option>
+                                  <option value="Breakfast">Breakfast</option>
+                                  <option value="Mexican">Mexican</option>
+                                  <option value="Chinese">Chinese</option>
+                                  <option value="Vietnamese">Vietnamese</option>
+                                  <option value="Thai">Thai</option>
+                                  <option value="BBQ">BBQ</option>
+                                  <option value="Sandwhiches">Sandwhiches</option>
+                                  <option value="Pakistani">Pakistani</option>
+                                  <option value="Greek">Greek</option>
+                                </select>
+                              </div>
+                            </div>
+                            <!-- <div class="control">
+                              <button type="submit" class="button is-primary">Choose</button>
+                            </div> -->
+                          </div>
                     </div>
                         <!--Choose Diet Restriction Modal--> 
                         <!-- <div class=" column second-column">
                             <div class="input" type="checkbox">Enter Diet Restrictions</div>
                         </div>
-                    </div>
-                </div> -->
-                    <div class="columns is-centered">
-                        <div class="column is-half has-text-centered">
-                            <button class="button has-background-grey-lighter" type="submit">Submit</button>
-                        </div>
+                    </div>-->
+                    </div> 
+                <div class="columns is-centered">
+                    <div class="column is-half has-text-centered">
+                        <button class="button has-background-grey-lighter" type="submit">Submit</button>
                     </div>
                 </div>
             </div>
         </form>
     </section>
-    <section class="section background-size-cover has-text-light" id="restaurantSection">
+    <section class="section has-text-light" id="restaurantSection">
         <div class="container">
             <div class="Columns">
                 <div class="column">
