@@ -4,8 +4,9 @@ let autocomplete;
 var modalButton = document.querySelector('#modalButton');
 var modal = document.querySelector('#modal');
 
-$("#restaurantSection").attr("style", "display:none");
 
+$("#restaurantSection").attr("style", "display:none");
+google.maps.event.addDomListener(window, 'load', initAutocomplete); 
 function initAutocomplete(){
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('autocomplete'),
@@ -14,6 +15,7 @@ function initAutocomplete(){
       componentRestrictions: {'country': ['us']}
     });
 }
+
 //event listener for modal button
 $("#modalButton").on("click", closeModal);
 
