@@ -30,7 +30,6 @@ p{
   background-image: url('https://i.imgur.com/QkRzPgt.jpg');
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .restaurantPhoto{
@@ -45,4 +44,12 @@ p{
 .has-image-centered {
   margin-left: auto;
   margin-right: auto;
+}
+
+.hide{
+  display: none;
+}
+
+.has-background-orange-lighter{
+  background-color: #C9A788!important;
 }

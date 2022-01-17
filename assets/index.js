@@ -3,7 +3,7 @@ var searchInput = document.querySelector('#autocomplete');
 let autocomplete;
 var modalButton = document.querySelector('#modalButton');
 var modal = document.querySelector('#modal');
-
+var logoCanvas = document.getElementById('logo');
 
 $("#restaurantSection").attr("style", "display:none");
 google.maps.event.addDomListener(window, 'load', initAutocomplete); 
@@ -40,6 +40,8 @@ var formSubmitHandler = function(event){
 
   console.log(budget);
   console.log(foodType);
+
+  logoCanvas.classList.add('hide');
 
   getYelpApi(cityName, budget, foodType);
 }
