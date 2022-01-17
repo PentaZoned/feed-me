@@ -5,10 +5,21 @@ $(function(){
   var modalButton = document.querySelector('#modalButton');
   var modal = document.querySelector('#modal');
   var logoCanvas = document.getElementById('logo');
-  var imageRef = document.getElementById("#RestaurantPhoto");
+
+  var restName = document.getElementById("restaurantName");
+  var restRating = document.getElementById("restaurantRating");
+  var restStatus = document.getElementById("restaurantStatus");
+  var restAddress = document.getElementById("restaurantAddress");
+  var restNumber = document.getElementById("restaurantNumber");
+  var restPhoto = document.getElementById("restaurantPhoto");
+  var restHistory = document.getElementById("restaurantHistory");
+
 
   $("#restaurantSection").attr("style", "display:none");
   google.maps.event.addDomListener(window, 'load', initAutocomplete); 
+
+  var listCount = 0;
+
   function initAutocomplete(){
     autocomplete = new google.maps.places.Autocomplete(
       document.getElementById('autocomplete'),
@@ -78,8 +89,8 @@ $(function(){
 
             $("#restaurantSection").attr("style", "display:visible");
 
-            $("#restaurantName").text(restaurantIndex.name);
-            $("#restaurantRating").text(restaurantIndex.rating);
+            restName.textContent = restaurantIndex.name;
+            restRating.textContent = restaurantIndex.rating;
 
             var open;
             if(restaurantIndex.is_closed === false) {
@@ -88,88 +99,38 @@ $(function(){
               open = "Currently Closed";
             }
 
-            $("#restaurantStatus").text(open);
-            $("#restaurantAddress").text(restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
-                                        + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code);
-            $("#restaurantNumber").text(restaurantIndex.display_phone);
+            restStatus.textContent = open;
+            restAddress.textContent = restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
+                                        + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code;
+            restNumber.textContent = restaurantIndex.display_phone;
 
-            $("#restaurantPhoto").attr("src", restaurantIndex.image_url);
+            restPhoto.setAttribute("src", restaurantIndex.image_url);
 
-            saveRestaurant(cityName, budget, foodType);
-
+            appendList();
           })
   }
 
-  function getYelpApiPrev(cityName, budget, foodType){
-    var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1DxsjrO-XhEj2sNaG7HMrxnhGvRihWa5iQI7mXvRlOM-w_XRXd3UxOMswA9Bxp_jIFBB-YHYx'
-        var yelp_search_url = 'https://api.yelp.com/v3/businesses/search'
-        var cors_anywhere_url = 'https://cors-anywhere.herokuapp.com'
-          var requestObj = {
-            'url': cors_anywhere_url + '/' + yelp_search_url,
-            'data': {
-                    term: foodType,
-                    location: cityName,
-                    price: budget,
-                  },
-            headers: {'Authorization': token},
-            error: function(jqXHR, textStatus, errorThrown){
-              console.log('AJAX error, jqXRH = ', jqXHR, ', textStatus =',
-              textStatus, ', errorThrown = ', errorThrown)
-            } 
-          } 
-          $.ajax(requestObj)
-            .done(function(response){
-              var array = response.businesses;
-              var restaurantIndex = array[Math.floor(Math.random() * array.length)];
-              console.log('response = ', array)
-              console.log(restaurantIndex);
-  
-              $("#restaurantSection").attr("style", "display:visible");
-  
-              $("#restaurantName").text(restaurantIndex.name);
-              $("#restaurantRating").text(restaurantIndex.rating);
-  
-              var open;
-              if(restaurantIndex.is_closed === false) {
-                open = "Currently Open";
-              } else {
-                open = "Currently Closed";
-              }
-  
-              $("#restaurantStatus").text(open);
-              $("#restaurantAddress").text(restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
-                                          + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code);
-              $("#restaurantNumber").text(restaurantIndex.display_phone);
-  
-              $("#restaurantPhoto").attr("src", restaurantIndex.image_url);
-            })
-    }
+  function appendList() {
+    var newListItem = document.createElement("button");
+    newListItem.innerHTML = restName.textContent;
+    restHistory.appendChild(newListItem);
+  }
+
 
   // Function is used to save the restaurant information
-  function saveRestaurant(cityName, budget, foodType) {
-
+  function saveRestaurant() {
     // Creates a jQuery object prototype to store a single restaurant's information
     var previousRestaurant = {
-      city: cityName,
-      cost: budget,
-      food: foodType
+      name: restName.textContent,
+      rating: restRating.textContent,
+      status: restStatus.textContent,
+      address: restAddress.textContent,
+      number: restNumber.textContent
     };
     // Creates a key for the values and converts the object into a string
     localStorage.setItem("previousRestaurant", JSON.stringify(previousRestaurant));
   }
 
-
-  function renderLastRest() {
-    $("#restaurantSection").attr("style", "display:visible");
-    var lastInfo = JSON.parse(localStorage.getItem("previousRestaurant"));
-
-    if(lastInfo !== null) {
-      $("#restaurantName").text(lastInfo.name);
-      getYelpApiPrev(lastInfo.cityName, lastInfo.budget, lastInfo.foodType)
-    } else {
-      return;
-    }
-  }
 
   //Logo using Zdog api and Anime api
 
