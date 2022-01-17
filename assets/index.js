@@ -124,6 +124,7 @@ $(function(){
             localStorage.setItem("savedRestList", JSON.stringify(savedRestList));
 
             appendList();
+            savedIndex++;
           })
   }
 
@@ -131,13 +132,20 @@ $(function(){
   function appendList() {
     var newListItem = document.createElement("button"); // creates button element
     newListItem.innerHTML = restName.textContent;       // displays the name of the restaurant on the button
+    var newIndex = savedIndex;
+    newListItem.setAttribute("data-count", newIndex);
+    newListItem.setAttribute("id", "count" + newIndex);
     newListItem.addEventListener("click", displayPrev); // adds an event listener to the button
     restHistory.appendChild(newListItem);               // appends the button on the list
+
   }
 
   // function will display the restaurant info of the button pressed
   function displayPrev() {
     var prevRest = JSON.parse(localStorage.getItem("savedRestList"));
+    var buttonIndex = document.getElementById("count" + newIndex).getAttribute("data-count");
+    console.log(buttonIndex);
+    restName.textContent = localStorage[0][buttonIndex];
   }
 
   //Logo using Zdog api and Anime api
