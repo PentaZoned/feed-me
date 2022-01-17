@@ -78,7 +78,7 @@ $(function(){
             $("#restaurantSection").attr("style", "display:visible");
 
             $("#restaurantName").text(restaurantIndex.name);
-            $("#restaurantRating").text("Rating: " + restaurantIndex.rating);
+            $("#restaurantRating").text(restaurantIndex.rating);
 
             var open;
             if(restaurantIndex.is_closed === false) {
