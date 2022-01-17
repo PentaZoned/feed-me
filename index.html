@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-    src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous">
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
@@ -40,11 +35,11 @@
                   <div class="columns">
                     <!--Restaurant Name-->
                     <div class="column has-text-centered is-offset-2">
-                      <h2 id="restaurantName">Restaurant Name:</h2>
-                      <h3 id="restaurantRating">Rating:</h2>
-                      <h4 id="restaurantStatus">Status:</h2>
-                      <p id="restaurantAddress">Address:</p>
-                      <p id="restaurantNumber">Phone Number:</p>
+                      <h2>Restaurant Name: <span id="restaurantName"></span></h2>
+                      <h3>Rating: <span id="restaurantRating"></span></h2>
+                      <h4>Status: <span id="restaurantStatus"></span></h2>
+                      <p>Address: <span id="restaurantAddress"></span></p>
+                      <p>Phone Number: <span id="restaurantNumber"></span></p>
                     </div>
                     <div class="column">
                       <!--Restaurant Photo-->
@@ -135,6 +130,11 @@
             </div>
         </div>
     </section>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+    </script>
     <script 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_MRjVNaC1LP659PeDLQW5KgHHnw4hVQM&libraries=places">
     </script>

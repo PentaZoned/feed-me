@@ -6,8 +6,21 @@ $(function(){
   var modal = document.querySelector('#modal');
   var logoCanvas = document.getElementById('logo');
 
+  var restName = document.getElementById("restaurantName");
+  var restRating = document.getElementById("restaurantRating");
+  var restStatus = document.getElementById("restaurantStatus");
+  var restAddress = document.getElementById("restaurantAddress");
+  var restNumber = document.getElementById("restaurantNumber");
+  var restPhoto = document.getElementById("restaurantPhoto");
+  var restHistory = document.getElementById("restaurantHistory");
+
+
   $("#restaurantSection").attr("style", "display:none");
   google.maps.event.addDomListener(window, 'load', initAutocomplete); 
+
+  var savedRestList = [];
+  var savedIndex = 0;
+
   function initAutocomplete(){
     autocomplete = new google.maps.places.Autocomplete(
       document.getElementById('autocomplete'),
@@ -75,60 +88,56 @@ $(function(){
             console.log('response = ', array)
             console.log(restaurantIndex);
 
+            // sets the restaurant section to be visible
             $("#restaurantSection").attr("style", "display:visible");
+            // sets the contents of the restaurant name and rating
+            restName.textContent = restaurantIndex.name;
+            restRating.textContent = restaurantIndex.rating;
 
-            $("#restaurantName").text(restaurantIndex.name);
-            $("#restaurantRating").text("Rating: " + restaurantIndex.rating);
-
+            // converts the false/true into actual open and closed content
             var open;
             if(restaurantIndex.is_closed === false) {
               open = "Currently Open";
             } else {
               open = "Currently Closed";
             }
+            // assigns the contents of status, address, phone number, and photo
+            restStatus.textContent = open;
+            restAddress.textContent = restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
+                                        + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code;
+            restNumber.textContent = restaurantIndex.display_phone;
 
-            $("#restaurantStatus").text(open);
-            $("#restaurantAddress").text(restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
-                                        + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code);
-            $("#restaurantNumber").text(restaurantIndex.display_phone);
+            restPhoto.setAttribute("src", restaurantIndex.image_url);
 
-            $("#restaurantPhoto").attr("src", restaurantIndex.image_url);
+            // restaurant object prototype
+            var previousRestaurant = {
+              name: restName.textContent,
+              rating: restRating.textContent,
+              status: restStatus.textContent,
+              address: restAddress.textContent,
+              number: restNumber.textContent,
+              photo: restaurantIndex.image_url
+            };
+            // pushes the current restautant object to the back of the localstorage key
+            savedRestList.push(previousRestaurant);
+            // Creates a key for the values and converts the object into a string
+            localStorage.setItem("savedRestList", JSON.stringify(savedRestList));
 
-            saveRestaurant();
-
+            appendList();
           })
   }
 
-  // Function is used to save the restaurant information
-  function saveRestaurant() {
-    // Creates a jQuery object prototype to store a single restaurant's information
-    var previousRestaurant = {
-      name: $("#restaurantName").text(),
-      rating: $("#restaurantRating").text(),
-      status: $("#restaurantStatus").text(),
-      address: $("#restaurantAddress").text(),
-      phoneNumber: $("#restaurantNumber").text(),
-      photo: $("#restaurantPhoto").text()
-    };
-    // Creates a key for the values and converts the object into a string
-    localStorage.setItem("previousRestaurant", JSON.stringify(previousRestaurant));
+  // Appends a restaurant button to the list after each submit
+  function appendList() {
+    var newListItem = document.createElement("button"); // creates button element
+    newListItem.innerHTML = restName.textContent;       // displays the name of the restaurant on the button
+    newListItem.addEventListener("click", displayPrev); // adds an event listener to the button
+    restHistory.appendChild(newListItem);               // appends the button on the list
   }
 
-
-  function renderLastRest() {
-    $("#restaurantSection").attr("style", "display:visible");
-    var lastInfo = JSON.parse(localStorage.getItem("previousRestaurant"));
-
-    if(lastInfo !== null) {
-      $("#restaurantName").text(lastInfo.name);
-      $("#restaurantRating").text(lastInfo.rating);
-      $("#restaurantStatus").text(lastinfo.status);
-      $("#restaurantAddress").text(lastInfo.address);
-      $("#restaurantNumber").text(lastinfo.phoneNumber);
-      $("#restaurantPhoto").text(lastinfo.photo);
-    } else {
-      return;
-    }
+  // function will display the restaurant info of the button pressed
+  function displayPrev() {
+    var prevRest = JSON.parse(localStorage.getItem("savedRestList"));
   }
 
   //Logo using Zdog api and Anime api
