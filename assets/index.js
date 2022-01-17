@@ -77,7 +77,7 @@ var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1Dxsj
           $("#restaurantSection").attr("style", "display:visible");
 
           $("#restaurantName").text(restaurantIndex.name);
-          $("#restaurantRating").text(restaurantIndex.rating);
+          $("#restaurantRating").text("Rating: " + restaurantIndex.rating);
 
           var open;
           if(restaurantIndex.is_closed === false) {
