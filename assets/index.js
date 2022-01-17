@@ -5,6 +5,7 @@ $(function(){
   var modalButton = document.querySelector('#modalButton');
   var modal = document.querySelector('#modal');
   var logoCanvas = document.getElementById('logo');
+  var imageRef = document.getElementById("#RestaurantPhoto");
 
   $("#restaurantSection").attr("style", "display:none");
   google.maps.event.addDomListener(window, 'load', initAutocomplete); 
@@ -101,6 +102,11 @@ $(function(){
 
   // Function is used to save the restaurant information
   function saveRestaurant() {
+
+    // Creates a canvas element for the image we want to store
+    var imgCanvas = document.createElement("canvas");
+    var imgContext = imgCanvas.getContext("2d");
+
     // Creates a jQuery object prototype to store a single restaurant's information
     var previousRestaurant = {
       name: $("#restaurantName").text(),
