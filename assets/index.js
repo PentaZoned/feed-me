@@ -95,33 +95,19 @@ $(function(){
 
             $("#restaurantPhoto").attr("src", restaurantIndex.image_url);
 
-            saveRestaurant();
+            saveRestaurant(cityName, budget, foodType);
 
           })
   }
 
   // Function is used to save the restaurant information
-  function saveRestaurant() {
-
-    // Creates a canvas element for the image we want to store
-    var imgCanvas = document.createElement("canvas");
-    var imgContext = imgCanvas.getContext("2d");
-
-    // Makes sure the canvas has the same width and height as the original image
-    imgCanvas.width = imageRef.width;
-    imgCanvas.height = imageRef.height;
-
-    // Draws the image into the canvas element
-    imgContext.drawImage(imageRef, 0, 0, imageRef.width, imageRef.height);
+  function saveRestaurant(cityName, budget, foodType) {
 
     // Creates a jQuery object prototype to store a single restaurant's information
     var previousRestaurant = {
-      name: $("#restaurantName").text(),
-      rating: $("#restaurantRating").text(),
-      status: $("#restaurantStatus").text(),
-      address: $("#restaurantAddress").text(),
-      phoneNumber: $("#restaurantNumber").text(),
-      photo: $("#restaurantPhoto").text()
+      city: cityName,
+      cost: budget,
+      food: foodType
     };
     // Creates a key for the values and converts the object into a string
     localStorage.setItem("previousRestaurant", JSON.stringify(previousRestaurant));
