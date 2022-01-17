@@ -124,6 +124,7 @@ $(function(){
             localStorage.setItem("savedRestList", JSON.stringify(savedRestList));
 
             appendList();
+            savedIndex++;
           })
   }
 
@@ -131,13 +132,30 @@ $(function(){
   function appendList() {
     var newListItem = document.createElement("button"); // creates button element
     newListItem.innerHTML = restName.textContent;       // displays the name of the restaurant on the button
+    var newIndex = savedIndex;                          // sets a placeholder for the index so increments won't affect the other indexes
+    newListItem.setAttribute("data-count", newIndex);   // sets a count for a specific button
     newListItem.addEventListener("click", displayPrev); // adds an event listener to the button
     restHistory.appendChild(newListItem);               // appends the button on the list
+
   }
 
   // function will display the restaurant info of the button pressed
-  function displayPrev() {
-    var prevRest = JSON.parse(localStorage.getItem("savedRestList"));
+  function displayPrev(event) {
+    event.preventDefault(); // stops page refresh
+    console.log(event);
+
+    // parses the local storage so it's usable
+    var restParsed = JSON.parse(localStorage.getItem("savedRestList"));
+    // takes the data-count attribute and uses it as an index in this function
+    var buttonIndex = event.target.attributes[0].nodeValue;
+    console.log(buttonIndex);
+    // takes the restaurant data in local storage and set it as the restaurant details in the DOM
+    restName.textContent = restParsed[buttonIndex].name;
+    restRating.textContent = restParsed[buttonIndex].rating;
+    restStatus.textContent = restParsed[buttonIndex].status;
+    restAddress.textContent = restParsed[buttonIndex].address;
+    restNumber.textContent = restParsed[buttonIndex].number;
+    restPhoto.setAttribute("src", restParsed[buttonIndex].photo);
   }
 
   //Logo using Zdog api and Anime api
