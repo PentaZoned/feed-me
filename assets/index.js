@@ -88,18 +88,20 @@ $(function(){
             console.log('response = ', array)
             console.log(restaurantIndex);
 
+            // sets the restaurant section to be visible
             $("#restaurantSection").attr("style", "display:visible");
-
+            // sets the contents of the restaurant name and rating
             restName.textContent = restaurantIndex.name;
             restRating.textContent = restaurantIndex.rating;
 
+            // converts the false/true into actual open and closed content
             var open;
             if(restaurantIndex.is_closed === false) {
               open = "Currently Open";
             } else {
               open = "Currently Closed";
             }
-
+            // assigns the contents of status, address, phone number, and photo
             restStatus.textContent = open;
             restAddress.textContent = restaurantIndex.location.address1 + ", " + restaurantIndex.location.city + ", "
                                         + restaurantIndex.location.state + " " + restaurantIndex.location.zip_code;
@@ -107,6 +109,7 @@ $(function(){
 
             restPhoto.setAttribute("src", restaurantIndex.image_url);
 
+            // restaurant object prototype
             var previousRestaurant = {
               name: restName.textContent,
               rating: restRating.textContent,
@@ -115,7 +118,7 @@ $(function(){
               number: restNumber.textContent,
               photo: restaurantIndex.image_url
             };
-
+            // pushes the current restautant object to the back of the localstorage key
             savedRestList.push(previousRestaurant);
             // Creates a key for the values and converts the object into a string
             localStorage.setItem("savedRestList", JSON.stringify(savedRestList));
@@ -124,13 +127,18 @@ $(function(){
           })
   }
 
+  // Appends a restaurant button to the list after each submit
   function appendList() {
-    var newListItem = document.createElement("button");
-    newListItem.innerHTML = restName.textContent;
-    restHistory.appendChild(newListItem);
+    var newListItem = document.createElement("button"); // creates button element
+    newListItem.innerHTML = restName.textContent;       // displays the name of the restaurant on the button
+    newListItem.addEventListener("click", displayPrev); // adds an event listener to the button
+    restHistory.appendChild(newListItem);               // appends the button on the list
   }
 
-
+  // function will display the restaurant info of the button pressed
+  function displayPrev() {
+    var prevRest = JSON.parse(localStorage.getItem("savedRestList"));
+  }
 
   //Logo using Zdog api and Anime api
 
