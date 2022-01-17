@@ -18,7 +18,8 @@ $(function(){
   $("#restaurantSection").attr("style", "display:none");
   google.maps.event.addDomListener(window, 'load', initAutocomplete); 
 
-  var listCount = 0;
+  var savedRestList = [];
+  var savedIndex = 0;
 
   function initAutocomplete(){
     autocomplete = new google.maps.places.Autocomplete(
@@ -106,6 +107,19 @@ $(function(){
 
             restPhoto.setAttribute("src", restaurantIndex.image_url);
 
+            var previousRestaurant = {
+              name: restName.textContent,
+              rating: restRating.textContent,
+              status: restStatus.textContent,
+              address: restAddress.textContent,
+              number: restNumber.textContent,
+              photo: restaurantIndex.image_url
+            };
+
+            savedRestList.push(previousRestaurant);
+            // Creates a key for the values and converts the object into a string
+            localStorage.setItem("savedRestList", JSON.stringify(savedRestList));
+
             appendList();
           })
   }
@@ -116,20 +130,6 @@ $(function(){
     restHistory.appendChild(newListItem);
   }
 
-
-  // Function is used to save the restaurant information
-  function saveRestaurant() {
-    // Creates a jQuery object prototype to store a single restaurant's information
-    var previousRestaurant = {
-      name: restName.textContent,
-      rating: restRating.textContent,
-      status: restStatus.textContent,
-      address: restAddress.textContent,
-      number: restNumber.textContent
-    };
-    // Creates a key for the values and converts the object into a string
-    localStorage.setItem("previousRestaurant", JSON.stringify(previousRestaurant));
-  }
 
 
   //Logo using Zdog api and Anime api
