@@ -107,6 +107,13 @@ $(function(){
     var imgCanvas = document.createElement("canvas");
     var imgContext = imgCanvas.getContext("2d");
 
+    // Makes sure the canvas has the same width and height as the original image
+    imgCanvas.width = imageRef.width;
+    imgCanvas.height = imageRef.height;
+
+    // Draws the image into the canvas element
+    imgContext.drawImage(imageRef, 0, 0, imageRef.width, imageRef.height);
+
     // Creates a jQuery object prototype to store a single restaurant's information
     var previousRestaurant = {
       name: $("#restaurantName").text(),
