@@ -41,9 +41,7 @@ $(function(){
   var formSubmitHandler = function(event){
     event.preventDefault();
     var city = searchInput.value;
-    console.log(city);
     citySplit = city.split(',');
-    console.log(citySplit[0]);
     cityName = citySplit[0];
     
     var budgetSelect = document.getElementById('budget-list');
@@ -52,8 +50,6 @@ $(function(){
     var foodTypeSelect = document.getElementById('food-type-list');
     var foodType = foodTypeSelect.options[foodTypeSelect.selectedIndex].value;
 
-    console.log(budget);
-    console.log(foodType);
 
     logoCanvas.classList.add('hide');
 
@@ -85,8 +81,6 @@ $(function(){
           .done(function(response){
             var array = response.businesses;
             var restaurantIndex = array[Math.floor(Math.random() * array.length)];
-            console.log('response = ', array)
-            console.log(restaurantIndex);
 
             // sets the restaurant section to be visible
             $("#restaurantSection").attr("style", "display:visible");
@@ -143,13 +137,11 @@ $(function(){
   // function will display the restaurant info of the button pressed
   function displayPrev(event) {
     event.preventDefault(); // stops page refresh
-    console.log(event);
 
     // parses the local storage so it's usable
     var restParsed = JSON.parse(localStorage.getItem("savedRestList"));
     // takes the data-count attribute and uses it as an index in this function
     var buttonIndex = event.target.attributes[0].nodeValue;
-    console.log(buttonIndex);
     // takes the restaurant data in local storage and set it as the restaurant details in the DOM
     restName.textContent = restParsed[buttonIndex].name;
     restRating.textContent = restParsed[buttonIndex].rating;
