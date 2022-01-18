@@ -96,7 +96,7 @@ $(function(){
             $("#restaurantSection").attr("style", "display:visible");
             // sets the contents of the restaurant name and rating
             restName.textContent = restaurantIndex.name;
-            restRating.textContent = restaurantIndex.rating;
+            restRating.textContent = "Rating: " + restaurantIndex.rating;
 
             // converts the false/true into actual open and closed content
             var open;
