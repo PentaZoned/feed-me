@@ -46,9 +46,9 @@ Please disable ad blockers like AdBLock or Ublock when using the webpage. It dis
 
 * **Jose Pascual** 
 
-- [Link to Portfolio Site](#)
-- [Link to Github](https://github.com/)
-- [Link to LinkedIn](https://www.linkedin.com/)
+- [Link to Portfolio Site](https://plotinusspascual.github.io/my-portfolio/)
+- [Link to Github](https://github.com/plotinusspascual)
+- [Link to LinkedIn](https://www.linkedin.com/in/jose-plotinuss-pascual/)
 
 
 ## License
