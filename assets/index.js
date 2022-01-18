@@ -1,7 +1,17 @@
+
+  google.maps.event.addDomListener(window, 'load', initAutocomplete); 
+  function initAutocomplete(){
+    autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('autocomplete'),
+      {
+        types: ['(cities)'],
+        componentRestrictions: {'country': ['us']}
+      });
+  }
+
 $(function(){
   var searchForm = document.querySelector('#search-form');
   var searchInput = document.querySelector('#autocomplete');
-  let autocomplete;
   var modalButton = document.querySelector('#modalButton');
   var modal = document.querySelector('#modal');
   var logoCanvas = document.getElementById('logo');
@@ -16,19 +26,19 @@ $(function(){
 
 
   $("#restaurantSection").attr("style", "display:none");
-  google.maps.event.addDomListener(window, 'load', initAutocomplete); 
+
 
   var savedRestList = [];
   var savedIndex = 0;
-
-  function initAutocomplete(){
-    autocomplete = new google.maps.places.Autocomplete(
-      document.getElementById('autocomplete'),
-      {
-        types: ['(cities)'],
-        componentRestrictions: {'country': ['us']}
-      });
-  }
+  // google.maps.event.addDomListener(window, 'load', initAutocomplete); 
+  // function initAutocomplete(){
+  //   autocomplete = new google.maps.places.Autocomplete(
+  //     document.getElementById('autocomplete'),
+  //     {
+  //       types: ['(cities)'],
+  //       componentRestrictions: {'country': ['us']}
+  //     });
+  // }
 
   //event listener for modal button
   $(modalButton).on("click", closeModal);
