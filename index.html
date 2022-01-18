@@ -58,60 +58,63 @@
     </section>
     <section class="section has-text-light">
       <h1 class="columns is-centered">Feed Me</h1>
-        <form id="search-form">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div class="column first-column is-one-quarter">
-                        <!--Enter City button-->
-                        <input id="autocomplete" class="input has-background-grey-lighter has-text-grey-dark block is-normal" type="text" placeholder="Enter City" maxlength="20">
-                     <!--Choose a budget -->
-                     <div class="field has-addons">
-                        <div class="control is-expanded">
-                          <div class="select is-fullwidth">
-                            <select id="budget-list" class="has-background-grey-lighter ">
-                              <option value="" disabled selected hidden>Choose a Budget</option>
-                              <option value="1">$</option>
-                              <option value="2">$$</option>
-                              <option value="3">$$$</option>
-                              <option value="4">$$$$</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
+      <form id="search-form">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column first-column is-one-quarter">
+                    <!--Enter City button-->
+                    <input id="autocomplete" class="input has-background-grey-lighter has-text-grey-dark block is-small" type="text" placeholder="Enter City" maxlength="20">
+                </div>
+            </div>    
+            <div class="columns is-centered">
+                <!--Choose a budget -->
+              <div class="column second-column is-one-quarter">
+                <div class="field has-addons">
+                  <div class="control is-expanded">
+                    <div class="select is-fullwidth">
+                      <select id="budget-list" class="has-background-grey-lighter ">
+                        <option value="" disabled selected hidden>Choose a Budget</option>
+                        <option value="1">$</option>
+                        <option value="2">$$</option>
+                        <option value="3">$$$</option>
+                        <option value="4">$$$$</option>
+                      </select>
                     </div>
-                    <!--Enter type of Restaurant Type-->
-                    <div class="column second-column is-one-quarter">
-                        <div class="field has-addons">
-                            <div class="control is-expanded">
-                              <div class="select is-fullwidth">
-                                <select id="food-type-list" class="has-background-grey-lighter">
-                                  <option value="" disabled selected hidden>Choose a Type of Food </option>
-                                  <option value="American">American</option>
-                                  <option value="Delis">Delis</option>
-                                  <option value="Burgers">Burgers</option>
-                                  <option value="Breakfast">Breakfast</option>
-                                  <option value="Mexican">Mexican</option>
-                                  <option value="Chinese">Chinese</option>
-                                  <option value="Vietnamese">Vietnamese</option>
-                                  <option value="Thai">Thai</option>
-                                  <option value="BBQ">BBQ</option>
-                                  <option value="Sandwhiches">Sandwhiches</option>
-                                  <option value="Pakistani">Pakistani</option>
-                                  <option value="Greek">Greek</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
+                  </div>
+                </div>
+              </div>
+                <!--Enter type of Restaurant Type-->
+              <div class="column second-column is-one-quarter">
+                <div class="field has-addons">
+                  <div class="control is-expanded">
+                    <div class="select is-fullwidth">
+                      <select id="food-type-list" class="has-background-grey-lighter">
+                        <option value="" disabled selected hidden>Choose a Type of Food </option>
+                        <option value="American">American</option>
+                        <option value="Delis">Delis</option>
+                        <option value="Burgers">Burgers</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                        <option value="Thai">Thai</option>
+                        <option value="BBQ">BBQ</option>
+                        <option value="Sandwhiches">Sandwhiches</option>
+                        <option value="Pakistani">Pakistani</option>
+                        <option value="Greek">Greek</option>
+                      </select>
                     </div>
-                  </div> 
-                <!--Form Submit button-->
-                <div class="columns is-centered">
-                    <div class="column is-half has-text-centered">
-                        <button class="button-background-grey-lighter" type="submit">Submit</button>
-                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="columns is-centered">
+                <div class="column is-half has-text-centered">
+                    <button class="button has-background-grey-lighter" type="submit">Submit</button>
                 </div>
             </div>
-        </form>
+        </div>
+    </form>
     </section>
     <!--Previous Saved Restaurant button section-->
     <section>
