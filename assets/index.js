@@ -72,7 +72,7 @@ $(function(){
 
   function getYelpApi(cityName, budget, foodType){
   var token = 'Bearer uqPekTdjMxPwfPByRjaRhuSxoWXztbJfGo6_yHs6utX8o3e5WZPCxQM1DxsjrO-XhEj2sNaG7HMrxnhGvRihWa5iQI7mXvRlOM-w_XRXd3UxOMswA9Bxp_jIFBB-YHYx'
-      var yelp_search_url = 'https://api.yelp.com/v3/businesses/search'
+      var yelp_search_url = 'https://api.yelp.com/v3/businesses/search' 
       var cors_anywhere_url = 'https://cors-anywhere.herokuapp.com'
         var requestObj = {
           'url': cors_anywhere_url + '/' + yelp_search_url,
@@ -96,7 +96,7 @@ $(function(){
             $("#restaurantSection").attr("style", "display:visible");
             // sets the contents of the restaurant name and rating
             restName.textContent = restaurantIndex.name;
-            restRating.textContent = "Rating: " + restaurantIndex.rating;
+            restRating.textContent = restaurantIndex.rating;
 
             // converts the false/true into actual open and closed content
             var open;
