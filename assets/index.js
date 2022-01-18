@@ -134,6 +134,7 @@ $(function(){
     newListItem.innerHTML = restName.textContent;       // displays the name of the restaurant on the button
     var newIndex = savedIndex;                          // sets a placeholder for the index so increments won't affect the other indexes
     newListItem.setAttribute("data-count", newIndex);   // sets a count for a specific button
+    newListItem.setAttribute("class", "button is-light");
     newListItem.addEventListener("click", displayPrev); // adds an event listener to the button
     restHistory.appendChild(newListItem);               // appends the button on the list
 
