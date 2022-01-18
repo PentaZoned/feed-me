@@ -40,9 +40,10 @@ Please disable ad blockers like AdBLock or Ublock when using the webpage. It dis
 
 * **Laura Gupta** 
 
-- [Link to Portfolio Site](#)
-- [Link to Github](https://github.com/)
-- [Link to LinkedIn](https://www.linkedin.com/)
+- [Link to Portfolio Site](https://lauragupta.github.io/resumepage/)
+- [Link to Github](https://github.com/lauragupta?tab=repositories)
+- [Link to LinkedIn](https://www.linkedin.com/in/laura-gupta-5a277158/)
+
 
 * **Jose Pascual** 
 
