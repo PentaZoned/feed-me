@@ -29,6 +29,16 @@ Please disable ad blockers like AdBLock or Ublock when using the webpage. It dis
 
 * [See Live Site](https://pentazoned.github.io/feed-me/)
 
+## Screenshots and Gifs
+
+* [Gif](https://github.com/PentaZoned/feed-me/blob/main/assets/images/demonstration.gif)
+* [Screenshot1](https://github.com/PentaZoned/feed-me/blob/main/assets/images/screenshot1.jpg)
+* [Screenshot2](https://github.com/PentaZoned/feed-me/blob/main/assets/images/screenshot2.jpg)
+* [Screenshot3](https://github.com/PentaZoned/feed-me/blob/main/assets/images/screenshot3.jpg)
+* [Screenshot4](https://github.com/PentaZoned/feed-me/blob/main/assets/images/screenshot4.jpg)
+* [Screenshot5](https://github.com/PentaZoned/feed-me/blob/main/assets/images/screenshot5.jpg)
+
+
 
 ## Authors
 
