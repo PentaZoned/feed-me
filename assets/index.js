@@ -33,9 +33,9 @@ $(function(){
   //event listener for modal button
   $(modalButton).on("click", closeModal);
 
+  //function to close modal
   function closeModal() {
-  console.log("it works");
-  modal.remove("is-active");
+    modal.remove("is-active");
   }
 
   var formSubmitHandler = function(event){
